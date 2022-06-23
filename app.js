@@ -5,10 +5,11 @@ let img3 = document.getElementById('img3');
 let randomObject1, randomObject2, randomObject3;
 
 let imgSection = document.getElementById('imgSection')
-const maxRounds = 5;
+const maxRounds = 25;
 let userClicks = 0;
 let resultsButton = document.getElementById('resultsButton');
 let resultsDisplay = document.getElementById('resultsDisplay');
+let totalVotes = [];
 
 let images = [
     'bag',
@@ -94,6 +95,7 @@ function handleVote(event){
         resultsButton.hidden = false;
 
     }
+    timesClicked.push(totalVotes)
     genRandomImg();
 }
 function handleResults(event){
@@ -110,3 +112,19 @@ function handleResults(event){
 
 imgSection.addEventListener('click', handleVote)
 resultsButton.addEventListener('click', handleResults)
+
+
+let chartEl = getElementById("myChart");
+let ctx = chartEl.getContext("2d");
+
+let voteChart = new ChartEl(ctx, {
+    type: 'bar',
+    data: {
+        labels: images,
+        databases: [{
+            label: 'Number of Votes',
+            data: totalVotes,
+            backgroundColor: [],
+        }]
+    }
+})
