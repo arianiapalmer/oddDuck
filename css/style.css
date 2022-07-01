@@ -1,0 +1,10 @@
+#imgSection {
+    display: flex;
+    flex-direction:row;
+}
+img {
+    max-width: 300px;
+    height: 300px;
+    padding: 30px;
+    margin:auto;
+}

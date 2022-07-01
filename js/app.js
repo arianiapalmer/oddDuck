@@ -65,7 +65,7 @@ let genRandomImg = function (){
     randomObject1 = allProducts[randomImg1];
     randomObject2 = allProducts[randomImg2];
     randomObject3 = allProducts[randomImg3];
-
+    
     img1.src = randomObject1.path;
     img1.id = randomObject1.name;
     img2.src = randomObject2.path;
@@ -83,11 +83,13 @@ function handleVote(event){
     let name = event.target.id;
     if (name === randomObject1.name){
         randomObject1.timesClicked+= 1;
+        timesClicked.push(totalVotes);
     } else if (name === randomObject2.name){
         randomObject2.timesClicked+= 1;
     } else if (name === randomObject3.name){
         randomObject3.timesClicked+= 1;
     }
+    
     userClicks++
     if(userClicks === maxRounds){
         imgSection.removeEventListener('click', handleVote);
@@ -95,8 +97,9 @@ function handleVote(event){
         resultsButton.hidden = false;
 
     }
-    timesClicked.push(totalVotes)
     genRandomImg();
+    allProducts[i].this.timesClicked.push(totalVotes);
+    
 }
 function handleResults(event){
     let resultsList = document.createElement('ul');
@@ -114,17 +117,3 @@ imgSection.addEventListener('click', handleVote)
 resultsButton.addEventListener('click', handleResults)
 
 
-let chartEl = getElementById("myChart");
-let ctx = chartEl.getContext("2d");
-
-let voteChart = new ChartEl(ctx, {
-    type: 'bar',
-    data: {
-        labels: images,
-        databases: [{
-            label: 'Number of Votes',
-            data: totalVotes,
-            backgroundColor: [],
-        }]
-    }
-})
