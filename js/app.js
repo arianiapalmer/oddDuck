@@ -5,7 +5,7 @@ let img3 = document.getElementById('img3');
 let randomObject1, randomObject2, randomObject3;
 
 let imgSection = document.getElementById('imgSection')
-const maxRounds = 5;
+const maxRounds = 25;
 let userClicks = 0;
 let resultsButton = document.getElementById('resultsButton');
 let resultsDisplay = document.getElementById('resultsDisplay');
@@ -136,22 +136,48 @@ function displayChart(){
                 label: 'Number of Votes',
                 data: chartData,
                 backgroundColor: [
-                    'orange',
-                    'green',
-                    'blue',
-                    'red',
-                    'pink',
-                    'yellow',
+                   'maroon',
+                   'red',
+                   'pink',
+                   'brown',
+                   'orange',
+                   'apricot',
+                   'olive',
+                   'yellow',
+                   'beige',
+                   'lime',
+                   'green',
+                   'mint',
+                   'teal',
+                   'cyan',
+                   'navy',
+                   'blue',
+                   'purple',
+                   'lavender',
+                   'magenta',                    
                 ],
                 hoverOffset: 4,
 
                 borderColor: [
-                    'orange',
-                    'green',
-                    'blue',
+                    'maroon',
                     'red',
                     'pink',
-                    'yellow' 
+                    'brown',
+                    'orange',
+                    'apricot',
+                    'olive',
+                    'yellow',
+                    'beige',
+                    'lime',
+                    'green',
+                    'mint',
+                    'teal',
+                    'cyan',
+                    'navy',
+                    'blue',
+                    'purple',
+                    'lavender',
+                    'magenta',   
                 ],
                 
             }]
