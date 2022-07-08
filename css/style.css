@@ -1,6 +1,6 @@
 #imgSection {
-    display: flex;
-    flex-direction:row;
+    /* display: flex; */
+    /* flex-direction:row; */
 }
 img {
     max-width: 300px;
